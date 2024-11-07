@@ -1,0 +1,136 @@
+/* Full-page background color and font settings */
+body {
+    background: linear-gradient(135deg, #FF5733, #333333); /* Enhanced gradient for a more dynamic look */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+/* Navigation bar styling with fade-up effect */
+nav ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker background for better contrast */
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Added subtle shadow */
+    
+    /* Fade-up effect */
+    transform: translateY(50px); /* Start slightly below */
+    opacity: 0; /* Start transparent */
+    animation: fadeUp 1s ease-out forwards; /* Fade-up animation */
+    animation-delay: 1s; /* Delay to start after page load */
+}
+
+/* Keyframes for fade-up effect */
+@keyframes fadeUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; } /* Move into position and fully visible */
+}
+
+/* Navigation link styling with rotation and pulse effects */
+nav ul li a {
+    text-decoration: none;
+    color: #FFDDC1; /* Light peach color for better readability */
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+/* Rotation and pulse effects on hover */
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transform: scale(1.1) rotate(10deg); /* Scale and rotate on hover */
+    animation: pulse 0.8s infinite alternate; /* Pulse effect */
+}
+
+/* Keyframes for pulse effect */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); } /* Slight pulsating effect */
+}
+
+/* Header section styling with fade-in effect */
+header {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+    width: 90%;
+    max-width: 800px;
+
+    /* Fade-in effect */
+    opacity: 0; /* Start fully transparent */
+    animation: fadeIn 2s ease forwards; /* 2-second fade-in effect */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Header text styling with bounce effect */
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.3em;
+    color: #333333;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for effect */
+    transition: transform 0.2s ease; /* Add transition for bounce effect */
+}
+
+/* Bounce animation on header text when hovered */
+header h1:hover {
+    animation: bounce 0.5s ease; /* Apply bounce animation */
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Slight bounce up */
+}
+
+/* Paragraph text scaling effect on hover */
+header p {
+    font-size: 1.3em;
+    color: #555555;
+    line-height: 1.5; /* Improved line spacing */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+}
+
+/* Scale-up effect on paragraph hover */
+header p:hover {
+    transform: scale(1.05); /* Slight scale-up for emphasis */
+}
+
+/* Footer with pop-up effect */
+footer {
+    background-color: #333;
+    color: #FFDDC1;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    animation: popUp 1s ease forwards;
+    animation-delay: 2.5s; /* Delayed pop-up effect */
+}
+
+/* Keyframes for pop-up effect */
+@keyframes popUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
